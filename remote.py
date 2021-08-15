@@ -25,12 +25,12 @@ def downclicked():
 def leftclicked():
     device.shell('input keyevent 21')
 
-def enterclicked():
-    device.shell('input keyevent 66')
-    
 def rightclicked():
     device.shell('input keyevent 22')
 
+def enterclicked():
+    device.shell('input keyevent 66')
+    
 def backclicked():
     device.shell('input keyevent 4')
 
@@ -39,6 +39,15 @@ def homeclicked():
     
 def menuclicked():
     device.shell('input keyevent 1')
+
+def volupclicked():
+    device.shell('input keyevent 24')
+ 
+def voldnclicked():
+    device.shell('input keyevent 25')\
+
+def muteclicked():
+    device.shell('input keyevent 164')
 
 def onclose():
     client.remote_disconnect()
@@ -83,5 +92,13 @@ homebtn.grid(column=1, row=6)
 menubtn = Button(window, text="Menu", command=menuclicked)
 menubtn.grid(column=2, row=6)
 
+voldnbtn = Button(window, text="Vol -", command=voldnclicked)
+voldnbtn.grid(column=0, row=7)
+
+mutebtn = Button(window, text="Mute", command=muteclicked)
+mutebtn.grid(column=1, row=7)
+
+volupbtn = Button(window, text="Vol +", command=volupclicked)
+volupbtn.grid(column=2, row=7)
 window.mainloop()
 
